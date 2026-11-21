@@ -763,7 +763,7 @@ img {
 
   /* Ukuran huruf dasar, semua ukuran "rem" ikut membesar */
   html {
-    font-size: 17px;
+    font-size: 16px !important;
   }
 
   body {
@@ -771,18 +771,18 @@ img {
   }
 
   .wrap {
-    max-width: 1180px;
-    padding: 0 36px;
+    max-width: 980px !important;
+    padding: 0 20px !important;
   }
 
   /* --- Profil --- */
   header.hero {
-    padding: 96px 0 84px;
+    padding: 64px 0 52px !important;
   }
 
   .hgrid {
-    grid-template-columns: 1fr minmax(300px, 400px);
-    gap: 72px;
+     grid-template-columns: 1fr minmax(220px, 330px) !important;
+    gap: 44px !important;
   }
 
   .hero .k {
@@ -790,13 +790,13 @@ img {
   }
 
   .hero h1 {
-    font-size: clamp(7rem, 13vw, 12rem);
+    font-size: clamp(4rem, 17vw, 9.5rem) !important;
   }
 
   .hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 30px 0 32px;
+    font-size: 1.08rem !important;
+    max-width: 520px !important;
+    margin: 26px 0 24px !important;
   }
 
   .btn {
@@ -805,12 +805,13 @@ img {
   }
 
   .stats {
-    gap: 56px;
-    margin-top: 48px;
+    gap: 34px !important;
+    margin-top: 34px !important;
   }
 
   .stats b {
-    font-size: 3rem;
+    font-size: 2rem !important;
+
   }
 
   .stats span {
@@ -825,7 +826,7 @@ img {
   }
 
   .band {
-    height: 150px;
+    height: clamp(70px, 13vw, 120px) !important;
   }
 
   /* --- Bar pencarian --- */
