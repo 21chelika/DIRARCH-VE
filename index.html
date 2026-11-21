@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DIRARCH!VE</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="welcome" role="dialog" aria-modal="true" aria-labelledby="wt">
+  <div class="frame">
+    <div class="wtext">
+      <p class="w1">Bienvenue, mon ami.</p>
+      <h2 id="wt">La Petite Maison de Dira</h2>
+      <p class="w2">A little world of handwritten dreams, delicate memories, and stories tucked away with love.</p>
+    </div>
+    <div class="wact">
+      <button class="btn" id="enter">Masuk ke dalam</button>
+      <p class="wnote">Sebagian karya bertema dewasa, baca dengan bijak.</p>
+    </div>
+  </div>
+</div>
+
+<header class="hero"><div class="wrap hgrid"><div>
+    <p class="k">@binxjk</p>
+    <h1>Dira<i>.</i></h1>
+    <p><span class="badge">21+</span>A storyteller of many worlds, writing LGBTQ+ AUs inspired by Evan and ENHYPEN, with a special fondness for Heeseung & Sunghoon. From soft beginnings to grown-up tales, various themes find their home here. No room for homophobia.</p>
+    <div class="links">
+      <a class="btn" href="https://x.com/binxjk" target="_blank" rel="noopener">Ikuti di Twitter</a>
+      <a class="btn ghost" href="https://www.tiktok.com/@binxjk" target="_blank" rel="noopener">Ikuti di TikTok</a>
+      <a class="btn ghost" href="#list">Lihat daftar AU</a>
+    </div>
+    <div class="stats">
+      <div><b id="s1">0</b><span>judul AU</span></div>
+      <div><b id="s2">0</b><span>couple</span></div>
+      <div><b id="s3">0</b><span>sudah tamat</span></div>
+    </div>
+  </div>
+  <figure class="photo"><img src="images/profil.jpg" alt="Foto profil Dira"></figure>
+  </div>
+</header>
+<div class="band" aria-hidden="true"></div>
+
+<div class="bar" id="list">
+  <div class="wrap">
+    <div class="row">
+      <input type="search" id="q" placeholder="Cari judul, tag, atau couple" aria-label="Cari AU">
+      <select id="st" aria-label="Filter status">
+        <option value="">Semua status</option>
+        <option>Tamat</option><option>On going</option><option>Oneshot</option>
+      </select>
+      <select id="so" aria-label="Urutkan">
+        <option value="new">Terbaru</option>
+        <option value="old">Terlama</option>
+        <option value="az">Judul A-Z</option>
+      </select>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="meta">
+    <span id="count"></span>
+    <span>
+      <button id="onlyfav">Tampilkan favorit saja</button> &nbsp;
+      <button id="rand">Acak satu AU</button>
+    </span>
+  </div>
+  <div id="out"></div>
+</main>
+
+
+<section class="wrap connect" id="kontak">
+  <h2>A Little Note for Dira</h2>
+  <div class="cgrid">
+    <div class="ccard">
+      <h3>Leave a Letter</h3>
+      <p>Have a question, a request, or simply wish to say hello? My little inbox is always open for your words.</p>
+      <a class="btn" href="https://alterspring.org/@dira" target="_blank" rel="noopener">Alterspring Dira</a>
+    </div>
+
+    <div class="ccard">
+      <h3>Send a Little Treat</h3>
+      <p>If my stories have found a place in your heart, you may leave a little treat. Your kindness means so much.</p>
+      <a class="btn" href="https://trakteer.id/binxjk" target="_blank" rel="noopener">Trakteer Dira</a>
+    </div>
+  </div>
+  <p class="connect-note">
+    Thank you for making this little house feel like home.
+  </p>
+</section>
+
+
+<footer>
+  <div class="wrap">
+    <p><b>Catatan.</b> Semua karya adalah fiksi dan tidak ada hubungannya dengan kehidupan asli para member. Konten dewasa, harap bijak membaca. Dilarang menyalin atau menyebarkan ulang tanpa izin penulis.</p>
+    <p style="margin-top:10px">© Dira (@binxjk)</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

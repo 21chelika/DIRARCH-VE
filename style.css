@@ -1,0 +1,937 @@
+/* ================================================
+   STYLE.CSS - Tampilan web Dira (@binxjk)
+   Warna utama ada di :root paling atas, ganti di situ.
+   ================================================ */
+
+:root {
+  --bg:#251314;
+  --main:#B36D39;
+  --sec:#CA9E88;
+  --acc:#D5726A;
+  --txt:#E2BAAE;
+  --line:rgba(202,158,136,.22);
+  --card:rgba(179,109,57,.07);
+  --wbg:#39251c;
+  --serif:'Bodoni Moda',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  color-scheme:dark;
+}
+
+* {
+  box-sizing:border-box;
+  margin:0;
+}
+
+html {
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  scroll-behavior:smooth;
+  scroll-padding-top:80px;
+}
+
+body {
+  background:linear-gradient(rgba(37,19,20,.84),rgba(37,19,20,.84)),url(images/background-kotak.jpg) #251314;
+  background-size:auto,654px auto;
+  color:var(--txt);
+  font:400 16px/1.6 var(--sans);
+}
+
+a {
+  color:inherit;
+}
+
+:focus-visible {
+  outline:2px solid var(--acc);
+  outline-offset:3px;
+}
+
+.wrap {
+  max-width:980px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+.btn {
+  display:inline-block;
+  border:1px solid var(--main);
+  background:var(--main);
+  color:var(--bg);
+  font:700 .95rem var(--sans);
+  padding:11px 22px;
+  border-radius:999px;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+.btn:hover {
+  background:var(--sec);
+  border-color:var(--sec);
+}
+
+.btn.ghost {
+  background:transparent;
+  color:var(--txt);
+  border-color:var(--line);
+  margin-left:8px;
+}
+
+.btn.ghost:hover {
+  border-color:var(--acc);
+  color:var(--acc);
+}
+
+/* welcome */
+#welcome {
+  position:fixed;
+  inset:0;
+  z-index:50;
+  background:var(--wbg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  transition:opacity .7s;
+}
+
+#welcome.out {
+  opacity:0;
+  pointer-events:none;
+}
+
+.frame {
+  position:relative;
+  width:min(100vw,calc(100vh*.7097));
+  width:min(100vw,calc(100svh*.7097));
+  aspect-ratio:736/1037;
+  background:url(images/bingkai-welcome.jpg) center/100% 100%;
+  container-type:inline-size;
+}
+
+.frame::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  box-shadow:inset 0 0 40px 30px var(--wbg);
+  pointer-events:none;
+}
+
+.wtext {
+  position:absolute;
+  left:18.3%;
+  top:32.8%;
+  width:62.5%;
+  height:31.2%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 4cqw;
+  color:#4b2a1c;
+}
+
+.w1 {
+  font-size:3.2cqw;
+  color:#8a4f2c;
+  margin-bottom:1.2cqw;
+}
+
+.wtext h2 {
+  font:500 6.2cqw/1.1 var(--serif);
+  margin-bottom:2.4cqw;
+}
+
+.w2 {
+  font-size:3.2cqw;
+  line-height:1.5;
+  color:#6b4030;
+}
+
+.wact {
+  position:absolute;
+  left:0;
+  right:0;
+  top:76%;
+  text-align:center;
+  z-index:2;
+}
+
+.wnote {
+  margin-top:14px;
+  font-size:.8rem;
+  color:var(--sec);
+}
+
+/* hero */
+header.hero {
+  padding:64px 0 52px;
+}
+
+.hgrid {
+  display:grid;
+  grid-template-columns:1fr minmax(220px,330px);
+  gap:44px;
+  align-items:center;
+}
+
+.photo {
+  transform:rotate(2deg);
+}
+
+.photo img {
+  display:block;
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  border:8px solid var(--txt);
+  border-radius:999px 999px 28px 28px;
+  box-shadow:0 18px 40px rgba(0,0,0,.5);
+}
+
+.band {
+  height:clamp(70px,13vw,120px);
+  background:url(images/pita-lace.jpg) center/cover;
+  filter:brightness(.78) saturate(.9);
+}
+
+@media(max-width:700px) {
+  .hgrid {
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+  .photo {
+    order:-1;
+    width:230px;
+    margin:0 auto;
+  }
+}
+
+.hero .k {
+  color:var(--acc);
+  font-weight:500;
+  margin-bottom:10px;
+}
+
+.hero h1 {
+  font:700 clamp(4rem,17vw,9.5rem)/.88 var(--serif);
+  color:var(--main);
+  letter-spacing:-.03em;
+  margin-left:-.04em;
+}
+
+.hero h1 i {
+  font-weight:500;
+  color:var(--sec);
+}
+
+.hero p {
+  max-width:520px;
+  margin:26px 0 24px;
+  font-size:1.08rem;
+}
+
+.badge {
+  display:inline-block;
+  border:1px solid var(--acc);
+  color:var(--acc);
+  border-radius:999px;
+  padding:2px 12px;
+  font-weight:700;
+  font-size:.85rem;
+  margin-right:8px;
+}
+
+.stats {
+  display:flex;
+  gap:34px;
+  flex-wrap:wrap;
+  margin-top:34px;
+}
+
+.stats b {
+  display:block;
+  font:500 2rem/1 var(--serif);
+  color:var(--sec);
+}
+
+.stats span {
+  font-size:.88rem;
+}
+
+/* toolbar */
+.bar {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(37,19,20,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  padding:14px 0;
+  padding-top:calc(14px + env(safe-area-inset-top,0px));
+  padding-bottom: 24px;
+}
+
+.row {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+input[type=search],select {
+  background:var(--card);
+  border:1px solid var(--line);
+  color:var(--txt);
+  border-radius:999px;
+  padding:10px 16px;
+  font:inherit;
+  min-width:0;
+}
+
+input[type=search] {
+  flex:1 1 240px;
+}
+
+select {
+  flex:0 1 auto;
+}
+
+select option {
+  background:var(--bg);
+}
+
+.chips {
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding-top:12px;
+  scrollbar-width:thin;
+  margin-top: 8px;
+  padding-bottom: 8px;
+}
+
+.chip {
+  flex:none;
+  border:1px solid var(--line);
+  background:none;
+  color:var(--txt);
+  border-radius:999px;
+  padding:5px 14px;
+  font:inherit;
+  font-size:.9rem;
+  cursor:pointer;
+}
+
+.chip:hover {
+  border-color:var(--sec);
+}
+
+.chip[aria-pressed=true] {
+  background:var(--acc);
+  border-color:var(--acc);
+  color:var(--bg);
+  font-weight:700;
+}
+
+/* list */
+main {
+  padding:34px 0 60px;
+}
+
+main.wrap {
+  padding-top: 72px;
+}
+
+.meta {
+  display:flex;
+  justify-content:space-between;
+  gap:1px;
+  flex-wrap:wrap;
+  margin-bottom:26px;
+  font-size:.92rem;
+  color:var(--sec);
+  align-items: center;
+}
+
+.meta > span:last-child {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+
+.meta button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 17px;
+  border: 1px solid rgba(202,158,136,.35);
+  border-radius: 999px;
+  background: rgba(179,109,57,.08);
+  color: var(--txt);
+  font: 500 .88rem var(--sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+/* Hover favorit */
+#onlyfav:hover {
+  background: rgba(213,114,106,.15);
+  border-color: var(--acc);
+  color: var(--acc);
+  transform: translateY(-2px);
+}
+
+/* Tombol acak AU */
+#rand {
+  background: var(--main);
+  border-color: var(--main);
+  color: var(--bg);
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(179,109,57,.15);
+}
+
+#rand:hover {
+  background: var(--acc);
+  border-color: var(--acc);
+  color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(213,114,106,.2);
+}
+
+.meta button:active {
+  transform: scale(.96);
+}
+
+section.couple {
+  margin-bottom:46px;
+}
+
+section.couple h2 {
+  font:500 clamp(2rem,6vw,3.2rem)/1 var(--serif);
+  color:var(--main);
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-bottom:6px;
+}
+
+section.couple h2 small {
+  font:400 .9rem var(--sans);
+  color:var(--sec);
+}
+
+.cdesc {
+  color:var(--sec);
+  margin-bottom:14px;
+  font-size:.95rem;
+}
+
+.au {
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:6px 18px;
+  align-items:center;
+  padding:16px 0;
+  border-top:1px solid var(--line);
+}
+
+.au h3 {
+  font:500 1.35rem/1.25 var(--serif);
+  color:var(--txt);
+}
+
+.au p {
+  grid-column:1;
+  font-size:.95rem;
+  color:var(--sec);
+  max-width:62ch;
+}
+
+.tags {
+  grid-column:1;
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-top:2px;
+}
+
+.tag {
+  font-size:.8rem;
+  border-radius:6px;
+  padding:1px 9px;
+  background:var(--card);
+  border:1px solid var(--line);
+}
+
+.tag.st {
+  border-color:var(--acc);
+  color:var(--acc);
+}
+
+.act {
+  grid-column:2;
+  grid-row:1/4;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.fav {
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:none;
+  color:var(--txt);
+  font-size:1.2rem;
+  cursor:pointer;
+}
+
+.fav[aria-pressed=true] {
+  background:var(--acc);
+  border-color:var(--acc);
+  color:var(--bg);
+}
+
+.empty {
+  padding:50px 0;
+  text-align:center;
+  color:var(--sec);
+}
+
+footer {
+  border-top:1px solid var(--line);
+  padding:34px 0 50px;
+  font-size:.88rem;
+  color:var(--sec);
+}
+
+footer b {
+  color:var(--txt);
+}
+
+@media(max-width:600px) {
+  .au {
+    grid-template-columns:1fr;
+  }
+  .act {
+    grid-column:1;
+    grid-row:auto;
+    margin-top:8px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior:auto;
+  }
+}
+
+/* ---------- Link sosial dan bagian kontak ---------- */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.links .btn {
+  margin: 0;
+}
+
+.connect {
+  padding-bottom: 56px;
+}
+
+.connect h2 {
+  font: 500 clamp(1.8rem, 5vw, 2.6rem)/1.1 var(--serif);
+  color: var(--main);
+  margin-bottom: 20px;
+}
+
+.cgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.ccard {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.ccard h3 {
+  font: 500 1.4rem/1.2 var(--serif);
+  color: var(--txt);
+  margin-bottom: 8px;
+}
+
+.ccard p {
+  color: var(--sec);
+  font-size: .95rem;
+  margin-bottom: 18px;
+}
+
+/* ================================================
+   TAMPILAN HP
+   Semua aturan di dalam @media hanya berlaku di layar kecil.
+   600px = lebar layar maksimal yang dianggap HP. Ganti angkanya kalau perlu.
+   ================================================ */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+
+  /* Ruang kiri-kanan lebih sempit */
+  .wrap {
+    padding: 0 16px;
+  }
+
+  /* --- Profil --- */
+  header.hero {
+    padding: 32px 0 36px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.8rem, 24vw, 5.5rem);
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin: 18px 0 20px;
+  }
+
+  /* Tombol sosial jadi satu kolom, lebar penuh, gampang disentuh */
+  .links {
+    flex-direction: column;
+  }
+
+  .links .btn {
+    width: 100%;
+    text-align: center;
+    padding: 13px 22px;
+  }
+
+  .stats {
+    gap: 0;
+    justify-content: space-between;
+    margin-top: 26px;
+  }
+
+  .stats b {
+    font-size: 1.7rem;
+  }
+
+  /* --- Bar pencarian --- */
+  .bar {
+    padding: 10px 0;
+    padding-bottom: 18px;
+  }
+
+  .row > input[type=search] {
+    flex: 1 1 100%;
+  }
+
+  .row select {
+    flex: 1 1 calc(50% - 5px);
+  }
+
+  /* 16px supaya iPhone tidak otomatis zoom saat mengetik */
+  input[type=search],
+  select {
+    font-size: 16px;
+  }
+
+  .chip {
+    padding: 8px 14px;
+  }
+
+  /* --- Daftar AU --- */
+  main {
+    padding: 24px 0 40px;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .meta button {
+    padding: 8px 0;
+  }
+
+  section.couple {
+    margin-bottom: 36px;
+  }
+
+  .au {
+    padding: 18px 0;
+  }
+
+  .au h3 {
+    font-size: 1.25rem;
+  }
+
+  .act {
+    margin-top: 10px;
+  }
+
+  .act .btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px 18px;
+  }
+
+  .fav {
+    width: 46px;
+    height: 46px;
+  }
+
+  /* --- Kontak dan donasi --- */
+  .ccard {
+    padding: 20px;
+  }
+
+  .ccard .btn {
+    display: block;
+    text-align: center;
+    padding: 13px 22px;
+  }
+
+  footer {
+    padding: 28px 0 40px;
+  }
+
+  main.wrap {
+    padding-top: 38px;
+  }
+
+  .meta > span:last-child {
+    gap: 8px;
+  }
+
+  .meta button {
+    padding: 9px 14px;
+    font-size: .82rem;
+  }
+}
+
+/* HP kecil banget (lebar 380px ke bawah) */
+@media (max-width: 380px) {
+  .stats span {
+    font-size: .8rem;
+  }
+
+  .photo {
+    width: 200px;
+  }
+}
+
+/* Teks welcome di HP: sedikit lebih kecil supaya muat di bingkai lace */
+@media (max-width: 480px) {
+  .wtext h2 {
+    font-size: 5.4cqw;
+    margin-bottom: 1.6cqw;
+  }
+
+  .w1,
+  .w2 {
+    font-size: 3cqw;
+  }
+
+  #enter {
+    padding: 13px 28px;
+  }
+}
+
+/* ================================================
+   TAMPILAN DESKTOP / LAPTOP
+   Berlaku di layar lebar 901px ke atas. Semua ukuran dibuat lebih besar
+   dan lega. Daftar AU berupa baris: judul di kiri, tombol di kanan.
+   ================================================ */
+@media (min-width: 901px) {
+
+  /* Ukuran huruf dasar, semua ukuran "rem" ikut membesar */
+  html {
+    font-size: 17px;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    padding: 0 36px;
+  }
+
+  /* --- Profil --- */
+  header.hero {
+    padding: 96px 0 84px;
+  }
+
+  .hgrid {
+    grid-template-columns: 1fr minmax(300px, 400px);
+    gap: 72px;
+  }
+
+  .hero .k {
+    font-size: 1.1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(7rem, 13vw, 12rem);
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 30px 0 32px;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 13px 28px;
+  }
+
+  .stats {
+    gap: 56px;
+    margin-top: 48px;
+  }
+
+  .stats b {
+    font-size: 3rem;
+  }
+
+  .stats span {
+    font-size: 1rem;
+  }
+
+  .photo img {
+    border-width: 10px;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, .55);
+    outline: 2px dashed rgba(226, 186, 174, .45);
+    outline-offset: 12px;
+  }
+
+  .band {
+    height: 150px;
+  }
+
+  /* --- Bar pencarian --- */
+  .bar {
+    padding: 18px 0;
+  }
+
+  input[type=search],
+  select {
+    font-size: 1rem;
+    padding: 13px 22px;
+  }
+
+  .chip {
+    font-size: 1rem;
+    padding: 7px 18px;
+  }
+
+  /* --- Daftar AU: judul di kiri, tombol di kanan --- */
+  main {
+    padding: 56px 0 90px;
+  }
+
+  .meta {
+    font-size: 1rem;
+    margin-bottom: 36px;
+  }
+
+  section.couple {
+    margin-bottom: 72px;
+  }
+
+  section.couple h2 {
+    font-size: clamp(3rem, 5vw, 4.6rem);
+  }
+
+  .cdesc {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+
+  .au {
+    gap: 8px 32px;
+    padding: 30px 0;
+  }
+
+  .au h3 {
+    font-size: 1.75rem;
+  }
+
+  .au p {
+    font-size: 1.02rem;
+  }
+
+  .tag {
+    font-size: .85rem;
+    padding: 2px 11px;
+  }
+
+  .fav {
+    width: 46px;
+    height: 46px;
+  }
+
+  /* --- Kontak dan donasi --- */
+  .connect {
+    padding-bottom: 90px;
+  }
+
+  .connect h2 {
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    margin-bottom: 26px;
+  }
+
+  .ccard {
+    padding: 34px;
+  }
+
+  .ccard h3 {
+    font-size: 1.7rem;
+  }
+
+  .ccard p {
+    font-size: 1.05rem;
+  }
+
+  footer {
+    font-size: 1rem;
+    padding: 44px 0 64px;
+  }
+}
+
+/* Layar laptop besar */
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Monitor besar / full HD ke atas */
+@media (min-width: 1700px) {
+  html {
+    font-size: 20px;
+  }
+
+  .wrap {
+    max-width: 1400px;
+  }
+}
